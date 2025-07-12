@@ -1,0 +1,28 @@
+name: Build on Push
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build DLL
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Build DLL
+        run: cargo build --release
+
+      - name: Upload DLL Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: runeblood_ascension
+          path: target/release/runeblood_ascension.dll

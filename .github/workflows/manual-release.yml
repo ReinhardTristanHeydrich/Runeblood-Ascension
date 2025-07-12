@@ -1,0 +1,36 @@
+name: Manual Release Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Build and Release DLL
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Build DLL
+        run: cargo build --release
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Manual Release - ${{ github.run_number }}"
+          tag_name: "v${{ github.run_number }}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload DLL to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: target/release/runeblood_ascension.dll
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
