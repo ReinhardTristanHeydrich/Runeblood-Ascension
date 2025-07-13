@@ -17,7 +17,11 @@ jobs:
         uses: dtolnay/rust-toolchain@nightly
         with:
           targets: x86_64-pc-windows-msvc
-          
+
+      - name: List files in workspace
+        run: dir -Recurse
+        shell: pwsh
+
       - name: Compile icon.rc using rc.exe
         shell: pwsh
         run: |
