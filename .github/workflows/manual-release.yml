@@ -27,9 +27,16 @@ jobs:
           $msvcToolPath = Join-Path $vsPath 'VC\Tools\MSVC'
           $latestMsvc = Get-ChildItem $msvcToolPath | Sort-Object Name -Descending | Select-Object -First 1
           $rcExePath = Join-Path $latestMsvc.FullName 'bin\Hostx64\x64\rc.exe'
-
+          
+          $workingDir = "${env:GITHUB_WORKSPACE}"
           Write-Host "Using rc.exe at: $rcExePath"
-          Start-Process -FilePath $rcExePath -ArgumentList '/fo', 'icon.res', 'icon.rc' -Wait -NoNewWindow
+          Write-Host "Working directory: $workingDir"
+
+          Start-Process -FilePath $rcExePath `
+            -ArgumentList '/nologo', '/fo', 'icon.res', 'icon.rc' `
+            -WorkingDirectory $workingDir `
+            -Wait -NoNewWindow
+
 
 
 
