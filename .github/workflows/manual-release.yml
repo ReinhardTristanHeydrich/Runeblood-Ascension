@@ -17,6 +17,11 @@ jobs:
         with:
           targets: x86_64-pc-windows-msvc
 
+      - name: Compile icon.rc to icon.res
+        run: |
+          "C:\Program Files (x86)\Windows Kits\10\bin\**\x64\rc.exe" /fo icon.res icon.rc
+
+
       - name: Build DLL
         run: cargo build --release
 
