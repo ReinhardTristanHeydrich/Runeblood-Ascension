@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Rust
+      - name: Install Rust (nightly)
         uses: dtolnay/rust-toolchain@nightly
         with:
           targets: x86_64-pc-windows-msvc
@@ -20,17 +20,11 @@ jobs:
       - name: Build DLL
         run: cargo build --release
 
-      - name: Create Release
+      - name: Upload to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          name: "Manual Release - ${{ github.run_number }}"
-          tag_name: "v${{ github.run_number }}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload DLL to Release
-        uses: softprops/action-gh-release@v2
-        with:
+          tag_name: "Stable-1.0.0"
+          name: "Stable 1.0.0"
           files: target/release/runeblood_ascension.dll
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
