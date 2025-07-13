@@ -32,11 +32,13 @@ jobs:
           $msvcToolPath = Join-Path $vsPath 'VC\Tools\MSVC'
           $latestMsvc = Get-ChildItem $msvcToolPath | Sort-Object Name -Descending | Select-Object -First 1
           $rcExePath = Join-Path $latestMsvc.FullName 'bin\Hostx64\x64\rc.exe'
-          
-          Write-Host "Using rc.exe at: $rcExePath"
-          Write-Host "Working directory: $PWD"
 
-          & "$rcExePath" /nologo /fo icon.res icon.rc
+          $command = "`"$rcExePath`" /nologo /fo icon.res icon.rc"
+          Write-Host "Using rc.exe: $rcExePath"
+          Write-Host "Running: cmd /c $command"
+
+          cmd /c $command
+
 
 
 
