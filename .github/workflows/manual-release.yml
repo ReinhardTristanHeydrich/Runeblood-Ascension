@@ -17,9 +17,18 @@ jobs:
         with:
           targets: x86_64-pc-windows-msvc
 
-      - name: Compile icon.rc to icon.res
+      - name: Locate and Run rc.exe | Compile icon.rc to icon.res
+        shell: pwsh
         run: |
-          "C:\Program Files (x86)\Windows Kits\10\bin\**\x64\rc.exe" /fo icon.res icon.rc
+          $rcPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" `
+            -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+            -property installationPath
+          $rcExe = Join-Path $rcPath 'VC\Tools\MSVC' `
+            | Get-ChildItem -Directory `
+            | Sort-Object Name -Descending `
+            | Select-Object -First 1 `
+            | ForEach-Object { Join-Path $_.FullName 'bin\Hostx64\x64\rc.exe' }
+          & $rcExe /fo icon.res icon.rc
 
 
       - name: Build DLL
