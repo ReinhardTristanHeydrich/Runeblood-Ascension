@@ -11,4 +11,7 @@ crate-type = ["cdylib"] # Compiles a DLL that will run in the game
 eldenring = { git = "https://github.com/vswarte/fromsoftware-rs", package = "eldenring" }
 eldenring-util = { git = "https://github.com/vswarte/fromsoftware-rs", package = "eldenring-util" }
 fromsoftware-shared = { git = "https://github.com/vswarte/fromsoftware-rs", package = "fromsoftware-shared" }
-nalgebra-glm = "0.19.0"
+#nalgebra-glm = "0.19.0"
+
+[build-dependencies]
+winres = "0.1"
