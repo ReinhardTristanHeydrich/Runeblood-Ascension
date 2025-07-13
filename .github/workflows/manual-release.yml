@@ -21,22 +21,12 @@ jobs:
         run: dir -Recurse
         shell: pwsh
 
-      - name: Compile icon.rc using rc.exe
-        shell: pwsh
+      - name: Compile icon.rc using rc.exe (via Developer Command Prompt)
+        shell: cmd
         run: |
-          $vsPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" `
-            -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
-            -property installationPath
-          
-          $msvcToolPath = Join-Path $vsPath 'VC\Tools\MSVC'
-          $latestMsvc = Get-ChildItem $msvcToolPath | Sort-Object Name -Descending | Select-Object -First 1
-          $rcExePath = Join-Path $latestMsvc.FullName 'bin\Hostx64\x64\rc.exe'
+          call "%ProgramFiles(x86)%\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VsDevCmd.bat"
+          rc /nologo /fo icon.res icon.rc
 
-          $command = "`"$rcExePath`" /nologo /fo icon.res icon.rc"
-          Write-Host "Using rc.exe: $rcExePath"
-          Write-Host "Running: cmd /c $command"
-
-          cmd /c $command
 
 
 
