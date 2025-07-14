@@ -1,7 +1,11 @@
 [package]
 name = "runeblood_ascension"
-version = "0.1.0"
+version = "1.0.1"
 edition = "2024"
+description = "Elden Ring mod that permanently enables Great Rune effect"
+authors = ["Charlie's Boyfriend [ReinhardTristanHeydrich]"]
+#license =
+repository = "https://github.com/ReinhardTristanHeydrich/Runeblood-Ascension"
 
 [lib]
 crate-type = ["cdylib"] # Compiles a DLL that will run in the game
