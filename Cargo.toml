@@ -8,9 +8,8 @@ authors = ["Charlie's Boyfriend [ReinhardTristanHeydrich]"]
 repository = "https://github.com/ReinhardTristanHeydrich/Runeblood-Ascension"
 
 [lib]
-crate-type = ["cdylib"] # Compiles a DLL that will run in the game
+crate-type = ["cdylib"]
 
 [dependencies]
 eldenring = "0.8.0"
 eldenring-util = "0.8.0"
-fromsoftware-shared = "0.8.0"

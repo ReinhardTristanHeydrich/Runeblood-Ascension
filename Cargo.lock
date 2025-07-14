@@ -362,7 +362,6 @@ version = "1.0.1"
 dependencies = [
  "eldenring",
  "eldenring-util",
- "fromsoftware-shared",
 ]
 
 [[package]]
