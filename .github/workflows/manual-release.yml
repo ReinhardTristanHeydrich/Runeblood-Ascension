@@ -17,14 +17,6 @@ jobs:
         with:
           targets: x86_64-pc-windows-msvc
 
-      - name: Compile icon.rc using rc.exe (via VSDevCmd from vswhere)
-        shell: cmd
-        run: |
-          for /f "usebackq tokens=*" %%i in (`"%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe" -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath`) do (
-            call "%%i\Common7\Tools\VsDevCmd.bat"
-          )
-          rc /nologo /fo icon.res icon.rc
-
       - name: Build DLL
         run: cargo build --release
 
