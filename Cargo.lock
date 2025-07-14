@@ -74,7 +74,8 @@ checksum = "c2ea6706d74fca54e15f1d40b5cf7fe7f764aaec61352a9fcec58fe27e042fc8"
 [[package]]
 name = "eldenring"
 version = "0.8.0"
-source = "git+https://github.com/vswarte/fromsoftware-rs#75e4d09184b9ff789a0f9681131df4d1dcd61d61"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7173d664dd900162cfeec9cc653e9f8f93188825be170fa50781f97c14fc4015"
 dependencies = [
  "fromsoftware-dlrf",
  "fromsoftware-shared",
@@ -93,7 +94,8 @@ dependencies = [
 [[package]]
 name = "eldenring-util"
 version = "0.8.0"
-source = "git+https://github.com/vswarte/fromsoftware-rs#75e4d09184b9ff789a0f9681131df4d1dcd61d61"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0efa35e24234d92e48cc4dd90aa7868cc4b7bf7168dc46646b3727710af38cd"
 dependencies = [
  "eldenring",
  "fromsoftware-dlrf",
@@ -111,7 +113,8 @@ dependencies = [
 [[package]]
 name = "fromsoftware-dlrf"
 version = "0.8.0"
-source = "git+https://github.com/vswarte/fromsoftware-rs#75e4d09184b9ff789a0f9681131df4d1dcd61d61"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d0e09d5f0b5114837fe0766b71645f325853139ecb0e4e448e3bd9f6eb42c74a"
 dependencies = [
  "fromsoftware-dlrf-derive",
 ]
@@ -119,7 +122,8 @@ dependencies = [
 [[package]]
 name = "fromsoftware-dlrf-derive"
 version = "0.8.0"
-source = "git+https://github.com/vswarte/fromsoftware-rs#75e4d09184b9ff789a0f9681131df4d1dcd61d61"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ca8b4e3358e2259ab4f0a59f5430a164b5e560617a6d79fc8bc92b13cec5847"
 dependencies = [
  "quote",
  "syn",
@@ -128,7 +132,8 @@ dependencies = [
 [[package]]
 name = "fromsoftware-shared"
 version = "0.8.0"
-source = "git+https://github.com/vswarte/fromsoftware-rs#75e4d09184b9ff789a0f9681131df4d1dcd61d61"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c086c96fa841f63cfe21f8bf0284d110406f30c796b0672d22ecc7bc954ca537"
 dependencies = [
  "nalgebra",
  "nalgebra-glm",

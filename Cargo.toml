@@ -11,6 +11,6 @@ repository = "https://github.com/ReinhardTristanHeydrich/Runeblood-Ascension"
 crate-type = ["cdylib"] # Compiles a DLL that will run in the game
 
 [dependencies]
-eldenring = { git = "https://github.com/vswarte/fromsoftware-rs", package = "eldenring" }
-eldenring-util = { git = "https://github.com/vswarte/fromsoftware-rs", package = "eldenring-util" }
-fromsoftware-shared = { git = "https://github.com/vswarte/fromsoftware-rs", package = "fromsoftware-shared" }
+eldenring = "0.8.0"
+eldenring-util = "0.8.0"
+fromsoftware-shared = "0.8.0"
