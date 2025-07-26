@@ -152,6 +152,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1171693293099992e19cddea4e8b849964e9846f4acee11b3948bcc337be8776"
 
 [[package]]
+name = "malenias_grace"
+version = "1.0.1"
+dependencies = [
+ "eldenring",
+ "eldenring-util",
+]
+
+[[package]]
 name = "matrixmultiply"
 version = "0.3.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -355,14 +363,6 @@ name = "regex-syntax"
 version = "0.8.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
-
-[[package]]
-name = "runeblood_ascension"
-version = "1.0.1"
-dependencies = [
- "eldenring",
- "eldenring-util",
-]
 
 [[package]]
 name = "safe_arch"
