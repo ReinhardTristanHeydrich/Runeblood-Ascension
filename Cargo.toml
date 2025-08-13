@@ -11,5 +11,5 @@ repository = "https://github.com/ReinhardTristanHeydrich/Runeblood-Ascension"
 crate-type = ["cdylib"]
 
 [dependencies]
-eldenring = "0.8.0"
-eldenring-util = "0.8.0"
+eldenring = "0.10.0"
+eldenring-util = "0.10.0"
