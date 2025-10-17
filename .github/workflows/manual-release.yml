@@ -24,15 +24,14 @@ jobs:
       - name: Gerar arquivo de licenças de dependências
         run: |
           cargo install cargo-about
-          cargo about generate -o THIRD_PARTY_LICENSES.txt
+          cargo about generate about.hbs > license.html
 
-      
+
       - name: Preparar arquivos para release
         run: |
           mkdir release_files
           copy target\release\runeblood_ascension.dll release_files\
-          copy LICENSE release_files\
-          copy THIRD_PARTY_LICENSES.txt release_files\
+          copy license.html release_files\
 
       
       - name: Upload to GitHub Releases
