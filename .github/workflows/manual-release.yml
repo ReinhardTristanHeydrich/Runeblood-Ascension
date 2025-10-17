@@ -20,11 +20,29 @@ jobs:
       - name: Build DLL
         run: cargo build --release
 
+      
+      - name: Gerar arquivo de licenças de dependências
+        run: |
+          cargo install cargo-about
+          cargo about generate about.hbs > THIRD_PARTY_LICENSES.txt
+
+      
+      - name: Preparar arquivos para release
+        run: |
+          mkdir release_files
+          copy target\release\runeblood_ascension.dll release_files\
+          copy LICENSE release_files\
+          copy THIRD_PARTY_LICENSES.txt release_files\
+
+      
       - name: Upload to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
           tag_name: "Stable-1.0.1"
           name: "Stable 1.0.1"
-          files: target/release/runeblood_ascension.dll
+          files: |
+            release_files/runeblood_ascension.dll
+            release_files/LICENSE
+            release_files/THIRD_PARTY_LICENSES.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
