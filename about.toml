@@ -1,0 +1,58 @@
+accepted = [
+    "MIT",
+    "BSD-3-Clause",
+    "Unicode-3.0",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception"
+]
+
+#ignore-build-dependencies = true
+#ignore-dev-dependencies   = true
+
+# #================================
+# [encoding_rs.clarify]
+# license = "(Apache-2.0 OR MIT) AND BSD-3-Clause"
+
+# [[encoding_rs.clarify.files]]
+# path = "LICENSE-APACHE"
+# license = "Apache-2.0"
+# checksum = "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+
+# [[encoding_rs.clarify.files]]
+# path = "LICENSE-WHATWG"
+# license = "BSD-3-Clause"
+# checksum = "838118388fe5c2e7f1dbbaeed13e1c7f3ebf88be91319c7c1d77c18e987d1a50"
+
+# [[encoding_rs.clarify.files]]
+# path = "LICENSE-MIT"
+# license = "MIT"
+# checksum = "3fa4ca83dcc9237839b1bdeb2e6d16bdfb5ec0c5ce42b24694d8bbf0dcbef72c"
+
+# #================================
+# [undname.clarify]
+# license = "Apache-2.0"
+
+# [[undname.clarify.files]]
+# path = "LICENSE"
+# license = "Apache-2.0"
+# checksum = "0a8225c4d3bd26ce70394a7776213646f7604bb26c3a17e4ee0e7d91eb41f922"
+# #================================
+
+# [unicode-ident.clarify]
+# license = "MIT OR Apache-2.0"
+
+# [[unicode-ident.clarify.files]]
+# path = "LICENSE-APACHE"
+# license = "Apache-2.0"
+# checksum = "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+
+# [[unicode-ident.clarify.files]]
+# path = "LICENSE-MIT"
+# license = "MIT"
+# checksum = "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+
+# [[unicode-ident.clarify.files]]
+# path = "LICENSE-UNICODE"
+# license = "Unicode-3.0"
+# checksum = "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1"
+

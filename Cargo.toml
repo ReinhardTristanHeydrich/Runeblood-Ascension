@@ -4,7 +4,7 @@ version = "1.0.1"
 edition = "2024"
 description = "Elden Ring mod that permanently enables Great Rune effect"
 authors = ["Charlie's Boyfriend [ReinhardTristanHeydrich]"]
-#license =
+#license = ""
 repository = "https://github.com/ReinhardTristanHeydrich/Runeblood-Ascension"
 
 [lib]
