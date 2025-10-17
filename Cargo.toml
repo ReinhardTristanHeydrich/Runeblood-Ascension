@@ -11,5 +11,9 @@ repository = "https://github.com/ReinhardTristanHeydrich/Runeblood-Ascension"
 crate-type = ["cdylib"]
 
 [dependencies]
+winapi = {version = "0.3.9", features = [
+    "libloaderapi",
+    "processthreadsapi"
+    ]}
 eldenring = "0.10.0"
 eldenring-util = "0.10.0"
