@@ -24,7 +24,7 @@ jobs:
       - name: Gerar arquivo de licenças de dependências
         run: |
           cargo install cargo-about
-          cargo about generate about.hbs > THIRD_PARTY_LICENSES.txt
+          cargo about generate -o THIRD_PARTY_LICENSES.txt
 
       
       - name: Preparar arquivos para release
