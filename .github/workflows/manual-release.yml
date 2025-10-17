@@ -24,8 +24,7 @@ jobs:
       - name: Gerar arquivo de licenças de dependências
         run: |
           cargo install cargo-about
-          cargo about generate about.hbs > license.html
-
+          cargo about generate about.hbs -o license.html
 
       - name: Preparar arquivos para release
         run: |
