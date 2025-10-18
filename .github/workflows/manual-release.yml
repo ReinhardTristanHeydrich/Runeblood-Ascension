@@ -21,16 +21,20 @@ jobs:
         run: cargo build --release
 
       
-      - name: Gerar arquivo de licenças de dependências
+      - name: Generate Dependecie's Licenses file
         run: |
           cargo install cargo-about
           cargo about generate about.hbs -o license.html
 
-      - name: Preparar arquivos para release
+      - name: Prepare files for release
         run: |
           mkdir release_files
           copy target\release\runeblood_ascension.dll release_files\
           copy license.html release_files\
+
+      - name: Create ZIP archive
+        run: |
+          powershell Compress-Archive -Path release_files\* -DestinationPath runeblood_ascension.zip
 
       
       - name: Upload to GitHub Releases
@@ -38,9 +42,6 @@ jobs:
         with:
           tag_name: "Stable-1.0.1"
           name: "Stable 1.0.1"
-          files: |
-            release_files/runeblood_ascension.dll
-            release_files/LICENSE
-            release_files/THIRD_PARTY_LICENSES.txt
+          files: runeblood_ascension.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
